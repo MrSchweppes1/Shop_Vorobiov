@@ -3,7 +3,6 @@ package com.example.shop;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -19,7 +18,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button addBt, clearBt;
-    EditText NameET, CostET;
+    EditText NameET, priceET;
     TextView cart;
     DBhelper dBhelper;
     SQLiteDatabase database;
@@ -38,8 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addBt.setOnClickListener(this);
         clearBt.setOnClickListener(this);
 
-        NameET = (EditText) findViewById(R.id.NameET);
-        CostET = (EditText) findViewById(R.id.Cost);
+        NameET = (EditText) findViewById(R.id.name);
+        priceET = (EditText) findViewById(R.id.price);
 
 
         cart = (TextView) findViewById(R.id.cart);
@@ -131,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.AddBut:
                 String name = NameET.getText().toString();
-                String cost = CostET.getText().toString();
+                String cost = priceET.getText().toString();
 
 
                 contentValues = new ContentValues();
@@ -148,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 UpdateTable();
                 NameET.setText(null);
-                CostET.setText(null);
+                priceET.setText(null);
                 break;
 
 
