@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             case R.id.btnStore:
-                Intent intent = new Intent(this, STORE.class);
+                Intent intent = new Intent(this, store.class);
                 startActivity(intent);
                 break;
 
